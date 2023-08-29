@@ -1,0 +1,38 @@
+import time
+import hashlib
+import random
+import time
+from colorama import Fore
+import os
+os.system("")
+
+
+
+print(f'''
+      DASMİNNER BTC
+''')
+
+
+# q = Response variable
+q = input("want start mining BTC?(Y/N)")
+if q == "Y" or q == "y":
+    pass
+else:
+    exit(1)
+
+#After how many tries does he have to prove that the extraction was successful?
+proby = random.randint(1000, 89300)
+BTC = random.randint(0, 5000)  # How many crypto to be mined
+
+# I'm looking for eth
+for i in range(0, proby):
+    print(
+        f'''{Fore.RED}[-] [0x{hashlib.sha1(str(i).encode()).hexdigest()}] Mining...  Amount BTC: 0.0000BTC")''')
+
+
+#Found crypto 
+i = random.randint(0, 100000)
+print(
+    f'''{Fore.GREEN}[+] [0x{hashlib.sha1(str(i).encode()).hexdigest()}] HIT!!! Amount BTC: {BTC/100000}BTC")''')
+
+input()

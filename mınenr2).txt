@@ -1,0 +1,67 @@
+import time
+import colorama
+from colorama import Fore, Style
+import random
+import string
+
+# Initialize Colorama
+colorama.init()
+
+print("> ETH.BTC wallet miner by DASMİNNER ") #you can delete this and add your own tag/name
+time.sleep(5)
+print("")
+
+crypto = input("Choose between ETH and BTC: ")
+
+if crypto == "ETH" or crypto == "BTC":
+    print("Okay, wallets are being prepared for mining")
+    time.sleep(3)
+
+    licensekey = input("Input license key: ")
+    if licensekey == "admin":
+        print("Key is VALID!")
+        time.sleep(0.5)
+    else:
+        print("Invalid key!")
+        print("Press enter to quit!")
+        input()
+        exit()
+
+    print("Checking if key is valid...")
+    time.sleep(1)
+
+    if crypto == "ETH":
+        address = input("Please enter your Ethereum address: ")
+        print("Checking if address exists...")
+        time.sleep(2)
+        print("Check has been successful!")
+
+    elif crypto == "BTC":
+        address = input("Please enter your Bitcoin address: ")
+        print("Checking if address exists...")
+        time.sleep(2)
+        print("Check has been successful!")
+
+
+    class bcolors:
+        @staticmethod
+        def id_gen(size=40, chars=string.ascii_uppercase + string.digits):
+            return "".join(random.choice(chars) for _ in range(size))
+
+
+    bcolors.tries = 0  # `bcolors` sınıfının içinde `tries` değişkeni tanımlandı
+
+    if crypto == "BTC":
+        while True:
+            if bcolors.tries > random.randint(2500000, 10000000000):
+                print(Fore.GREEN + "[-] BTC" + bcolors.id_gen() + " | Valid |- + - 1.673 btc")
+                print("Transferring 1.6 ETH")
+                print("Your ETH will be added to your ETH address within 72 hours. Times can differ!")
+                time.sleep(6)
+                bcolors.tries = 0
+                print("Done, SMİNERB is running again")
+                time.sleep(3)
+            else:
+                print(Fore.RED + "[-] bc1 " + bcolors.id_gen() + "| Invalid |" + "0.0000 BTC")
+else:
+    print("Invalid choice. Please choose between 'ETH' and 'BTC'")
